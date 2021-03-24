@@ -3,24 +3,24 @@
 int cbinsearch(int *arr, int size, int value) {
   //  поместить сюда реализацию алгоритма
   return 0; // если ничего не найдено
-  int a = 0,b = size - 1,num = 0,mid;
+ int i = 0, j = size - 1, countNum = 0;
     while (i < j) {
-        mid = (i + j) / 2;
+        int mid = (i + j) / 2;
         if (arr[mid] < value)
-            a = mid+1;
+            i = mid+1;
         else
-            b = mid;
+            j = mid;
     }
 
-    if (arr[a] == value) {
-        while (arr[a] == value) {
-            num++;
-            a++;
+    if (arr[i] == value) {
+        while (arr[i] == value) {
+            countNum++;
+            i++;
         }
     }
 
-    if (num)
-        return num;
+    if (countNum)
+        return countNum;
     else
         return 0;
 }
